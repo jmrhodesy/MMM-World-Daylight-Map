@@ -23,7 +23,7 @@
       };
       this.PRECISION_LAT = 1;
       this.PRECISION_LNG = 10;
-      this.MAP_WIDTH = options.width || 1100;
+      this.MAP_WIDTH = options.width || 700;
       this.MAP_HEIGHT = this.MAP_WIDTH / 2;
       this.SCALAR_X = this.MAP_WIDTH / 360;
       this.SCALAR_Y = this.MAP_HEIGHT / 180;

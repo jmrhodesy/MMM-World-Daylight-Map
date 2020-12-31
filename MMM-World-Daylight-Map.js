@@ -24,34 +24,36 @@ Module.register("MMM-World-Daylight-Map", {
             "moment-timezone.min.js", 
             "suncalc.js", 
             "script.js"
-        ]
+        ];
     },
 
+    /*getStyles: function() {
+      return["style.css"];
+    }*/
+
     start: function (){
-        this.count = 0
-        var timer = setInterval(()=>{
-          this.updateDom()
-        }, this.config.fetchInterval)
+        Log.info("Starting module: " + this.name);
+        
+        var timer = setInterval(this.updateDom(), this.config.fetchInterval);
       },
 
       getDom: function() {
         
-        var element = document.createElement("div")
-        element.innerHTML = "<h1>World Daylight Map</h1>"
-        + "<div class=\"container\">"
-        + "<h4>This map is cool!</h4>"
-        + "<svg id=\"daylight-map\"></svg>"
-        + "</div>"
-        + "<script src='./d3.min.js'></script>"
-        + "<script src='./jquery.min.js'></script>"
-        + "<script src='./topojson.min.js'></script>"
-        + "<script src='./d3.geo.projection.min.js'></script>"
-        + "<script src='./moment.min.js'></script>"
-        + "<script src='./moment-timezone.min.js'></script>"
-        + "<script src='./suncalc.js'></script>"
-        + "<script src=\"./script.js\"></script>"
+        var element = document.createElement("div");
+        element.innerHTML = "<div class=\"thin medium bright pre-line\">World Daylight Map</div>"
+          + "<div class=\"container\">"
+          + "<svg id=\"daylight-map\"></svg>"
+          + "</div>"
+          + "<script src='./d3.min.js'></script>"
+          + "<script src='./jquery.min.js'></script>"
+          + "<script src='./topojson.min.js'></script>"
+          + "<script src='./d3.geo.projection.min.js'></script>"
+          + "<script src='./moment.min.js'></script>"
+          + "<script src='./moment-timezone.min.js'></script>"
+          + "<script src='./suncalc.js'></script>"
+          + "<script src=\"./script.js\"></script>";
 
-        return element
+        return element;
       }
   })
 
